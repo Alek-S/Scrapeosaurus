@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Alek-S/Scrapeosaurus/issues"
   },
-  "homepage": "https://github.com/Alek-S/Scrapeosaurus#readme"
+  "homepage": "https://github.com/Alek-S/Scrapeosaurus#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.10.6",
+    "request": "^2.81.0"
+  }
 }
