@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const request = require("request");
 const cheerio = require("cheerio");
 
+
 //Models
 //TODO
 
@@ -49,9 +50,14 @@ db.once("open", function() { //confirm mongoose connected
 //===Routes===
 //TODO
 // require('./controllers/apiroutes.js')(app);
-
+//test
+app.get('/', function (req, res) {
+    res.status(200).send('ok');
+});
 
 //==Start Server==
-app.listen(app.get('port'), function() {
+let server = app.listen(app.get('port'), function() {
 	console.log('Running on Port:', app.get('port'));
 });
+
+module.exports = server;

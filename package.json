@@ -2,9 +2,9 @@
   "name": "scrapeosaurus",
   "version": "1.0.0",
   "description": "Hacker News Web Scraper",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"No tests\" && exit 0"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.10.6",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
