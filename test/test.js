@@ -1,16 +1,14 @@
 const request = require('supertest');
+const server = require('../server');
 
 describe('Loading Express', function () {
-	let server;
-	    beforeEach(function () {
-	    server = require('../server');
-    });
-	    afterEach(function () {
-	    server.close();
-    });
-	it('responds to /', function testSlash(done) {
-	    request(server)
+	afterEach(function () {
+		server.close();
+	});
+
+	it('responds to / with 200', function(done) {
+		request(server)
         .get('/')
         .expect(200, done);
-    });
+	});
 });
