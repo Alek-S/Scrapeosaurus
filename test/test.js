@@ -6,9 +6,9 @@ describe('Loading Express', function () {
 		server.close();
 	});
 
-	it('responds to / with 200', function(done) {
+	it('responds to GET / with 200', function(done) {
 		request(server)
-        .get('/')
-        .expect(200, done);
+			.get('/')
+			.expect(200, done);
 	});
 });

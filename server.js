@@ -5,9 +5,9 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
-const request = require("request");
-const cheerio = require("cheerio");
+const mongoose = require('mongoose');
+const request = require('request');
+const cheerio = require('cheerio');
 
 
 //Models
@@ -35,25 +35,23 @@ app.set('view engine', 'handlebars');
 
 
 //===MongoDB Connection with Mongoose==
-mongoose.connect("mongodb://localhost/scrape");
+mongoose.connect('mongodb://localhost/scrape');
 const db = mongoose.connection;
 
-db.on("error", function(error) { // Show any mongoose errors
-	console.log("Mongoose Error: ", error);
+db.on('error', function(error) { // Show any mongoose errors
+	console.log('Mongoose Error: ', error);
 });
 
-db.once("open", function() { //confirm mongoose connected
-	console.log("Mongoose connected.");
+db.once('open', function() { //confirm mongoose connected
+	console.log('Mongoose connected.');
 });
 
 
 //===Routes===
 //TODO
-// require('./controllers/apiroutes.js')(app);
+require('./controller/routes.js')(app);
 //test
-app.get('/', function (req, res) {
-    res.status(200).send('ok');
-});
+
 
 //==Start Server==
 let server = app.listen(app.get('port'), function() {
