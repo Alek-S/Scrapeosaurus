@@ -1,6 +1,5 @@
 'use strict';
 
-
 //==MODULES==
 const express = require('express');
 const handlebars = require('express-handlebars');
@@ -10,8 +9,6 @@ const request = require('request');
 const cheerio = require('cheerio');
 
 
-//Models
-//TODO
 
 //==Express Setup==
 const app = express();
@@ -48,9 +45,7 @@ db.once('open', function() { //confirm mongoose connected
 
 
 //===Routes===
-//TODO
 require('./controller/routes.js')(app);
-//test
 
 
 //==Start Server==
