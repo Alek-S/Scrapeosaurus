@@ -37,15 +37,29 @@ module.exports = function(app) {
 					let link = $(this).children('a').attr('href'); //link to submitted story
 
 					if (headline && link) {
-						//new document into mongo
-						let entry = new Article({
-							headline: headline,
-							link: link
-						}); //mongo document
-
-						entry.save((err)=> {
-							if (err) {
+						
+						Article.count({link: link},(err, count)=> {
+							if(err){
 								console.log(err);
+							}else{
+
+								//if not already in the DB
+								if(count === 0){
+									console.log('adding to db...');
+									//new document into mongo
+									let entry = new Article({
+										headline: headline,
+										link: link
+									}); 
+
+									entry.save((err)=> {
+										if (err) {
+											console.log(err);
+										}
+									});	
+								}else{
+									console.log('Already in DB');
+								}
 							}
 						});
 					}
