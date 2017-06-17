@@ -43,7 +43,6 @@ module.exports = function(app) {
 
 								//if not already in the DB
 								if(count === 0){
-									console.log('adding to db...');
 									//new document into mongo
 									let entry = new Article({
 										headline: headline,
