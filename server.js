@@ -5,9 +5,7 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const request = require('request');
-const cheerio = require('cheerio');
-
+const chalk = require('chalk');
 
 
 //==Express Setup==
@@ -36,13 +34,8 @@ mongoose.connect('mongodb://localhost/scrape');
 const db = mongoose.connection;
 
 db.on('error', function(error) { // Show any mongoose errors
-	console.log('Mongoose Error: ', error);
+	console.log(chalk.red('Mongoose Error: '), error);
 });
-
-db.once('open', function() { //confirm mongoose connected
-	console.log('Mongoose connected.');
-});
-
 
 //===Routes===
 require('./controller/routes.js')(app);
@@ -50,7 +43,7 @@ require('./controller/routes.js')(app);
 
 //==Start Server==
 let server = app.listen(app.get('port'), function() {
-	console.log('Running on Port:', app.get('port'));
+	console.log('Running on Port:', app.get('port'),'\n' );
 });
 
 module.exports = server;
