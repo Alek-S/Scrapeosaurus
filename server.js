@@ -6,12 +6,15 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const chalk = require('chalk');
-
+const morgan = require('morgan');
 
 //==Express Setup==
 const app = express();
 app.set('port', (process.env.PORT || 5000));
 
+
+//==Morgan Logger Middleware==
+app.use(morgan(':method :url :status - :response-time ms'));
 
 //===Parsing===
 app.use(bodyParser.json());

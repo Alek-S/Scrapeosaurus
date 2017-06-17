@@ -13,7 +13,6 @@ module.exports = function(app) {
 	
 	//grab all burgers and use them for index template
 	app.get('/', function (req, res) {
-		console.log(chalk.yellow('Get /'));
 		res.render('index');	
 	});
 
@@ -22,7 +21,6 @@ module.exports = function(app) {
 
 	//scrape hacker news articles
 	app.get('/api/scrape', (req,res)=>{
-		console.log(chalk.yellow('Get /api/scrape'));
 
 		request('https://news.ycombinator.com/news', (err, response, html)=> {
 			if(err){
@@ -57,8 +55,6 @@ module.exports = function(app) {
 											console.log(err);
 										}
 									});	
-								}else{
-									console.log('Already in DB');
 								}
 							}
 						});
@@ -73,8 +69,6 @@ module.exports = function(app) {
 
 	//get articles
 	app.get('/api/article', (req,res)=>{
-		console.log(chalk.yellow('Get /api/article'));
-
 		res.json('temp'); //TODO: reply
 	});
 
