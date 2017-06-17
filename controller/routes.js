@@ -31,16 +31,27 @@ module.exports = function(app) {
 			}else{
 				let $ = cheerio.load(html);
 
-				$('.athing .title').each(function(i, element) {
-					let headline = $(this).children('.storylink').text();
-					let link = $(this).children('a').attr('href');
+
+				$('.athing .title').each(()=> {
+					let headline = $(this).children('.storylink').text(); //article title
+					let link = $(this).children('a').attr('href'); //link to submitted story
 
 					if (headline && link) {
-						//TODO submit them as new article
+						//new document into mongo
+						let entry = new Article({
+							headline: headline,
+							link: link
+						}); //mongo document
+
+						entry.save((err)=> {
+							if (err) {
+								console.log(err);
+							}
+						});
 					}
 				});
 
-				res.json('temp'); //TODO
+				res.json({result: 'success'});
 			}
 		});
 
@@ -50,7 +61,7 @@ module.exports = function(app) {
 	app.get('/api/article', (req,res)=>{
 		console.log(chalk.yellow('Get /api/article'));
 
-		res.json('temp'); //TODO
+		res.json('temp'); //TODO: reply
 	});
 
 };

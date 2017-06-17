@@ -24,11 +24,13 @@ describe('API Routes:', function () {
 		server.close();
 	});
 
-	it('responds to GET /api/scrape with 200, JSON', function(done) {
+	it('responds to GET /api/scrape with 200, JSON success', function(done) {
 		request(server)
 			.get('/api/scrape')
 			.expect('Content-Type', /json/)
-			.expect(200, done);
+			.expect(200,  {
+				result: 'success',
+			}, done);
 	});
 
 	it('responds to GET /api/article with 200, JSON', function(done) {
