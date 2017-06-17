@@ -32,7 +32,7 @@ module.exports = function(app) {
 				let $ = cheerio.load(html);
 
 
-				$('.athing .title').each(()=> {
+				$('.athing .title').each(function() {
 					let headline = $(this).children('.storylink').text(); //article title
 					let link = $(this).children('a').attr('href'); //link to submitted story
 
