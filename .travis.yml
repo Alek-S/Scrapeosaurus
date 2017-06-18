@@ -3,9 +3,11 @@ node_js:
   - "8"
   - "6"
 install:
-  - npm install mocha supertest
+  - npm install
+  - npm install -g mocha supertest
 services:
   - mongodb
 env:
   - NODE_ENV=production
   - NODE_ENV=development
+  - PORT=5555
