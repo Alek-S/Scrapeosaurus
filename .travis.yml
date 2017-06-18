@@ -1,13 +1,7 @@
 language: node_js
 node_js:
   - "8"
-install:
-  - npm install -g mocha 
-  - npm install supertest
-  - npm install
 services:
   - mongodb
 env:
-  - NODE_ENV=production
-  - NODE_ENV=development
   - PORT=5555
