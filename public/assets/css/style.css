@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Bubbler+One');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
 body{
     background-color: #f2f2f2;
@@ -7,11 +7,10 @@ body{
 header{
     font-family: 'Bubbler One', sans-serif;
     font-size: 2.5em;
-    background-color: #bfff80;
-    box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.45);
+    background-color: #e6e6e6;
     padding-left: 20px;
     height: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 header span{
     position: relative;
@@ -20,7 +19,17 @@ header span{
 button{
     outline:none;
 }
-
+h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: .8em;
+    margin-bottom: 10px;
+}
 
 #scrape{
     margin-left: 33%;
@@ -31,11 +40,25 @@ button{
     border-radius: 5px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    background: linear-gradient(#d3d1d1, #a5a4a4);
+    background: linear-gradient(to bottom, #ff981a 0%, #e07b00 100%);
 }
 #scrape:hover{
-    background: linear-gradient(#d8d8d8, #b7b5b5);
+    background: linear-gradient(to bottom, #ffa333 0%, #f58700 100%);
 }
 #scrape:active{
-    background: linear-gradient(#c4c4c4, #898989);
+    background: linear-gradient(to bottom, #c76d00 0%, #9e5700 100%);
+}
+
+#stories{
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.story{
+    border-top: solid 4px #ffa333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background: #fff;
+    margin-bottom: 25px;
 }

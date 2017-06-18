@@ -1,5 +1,4 @@
 'use strict';
-const chalk = require('chalk');
 const request = require('request');
 const cheerio = require('cheerio');
 
@@ -13,14 +12,36 @@ module.exports = function(app) {
 	
 	//grab all burgers and use them for index template
 	app.get('/', function (req, res) {
-		res.render('index');	
+		Article.find({}, (err, docs)=>{
+			if(err){
+				console.log(err);
+			}else{
+				res.render('preliminary');
+				// res.render('index',{story: docs});
+			}
+		});	
 	});
+
+	//get all articles rendered page
+	app.get('/article', (req,res)=>{
+		Article.find({}, (err, docs)=>{
+			if(err){
+				console.log(err);
+			}else{
+				res.render('index',{story: docs});
+			}
+		});
+	});
+
 
 
 	//===API ROUTES===
 
-	//scrape hacker news articles
+	// 1. scrape hacker news articles
 	app.get('/api/scrape', (req,res)=>{
+		// 1. scrape hacker news articles
+		// 2. check if link already in db
+		// 3. if not, save entry as a new document
 
 		request('https://news.ycombinator.com/news', (err, response, html)=> {
 			if(err){
@@ -66,9 +87,16 @@ module.exports = function(app) {
 
 	});
 
-	//get articles
+	//get all articles as JSON
 	app.get('/api/article', (req,res)=>{
-		res.json('temp'); //TODO: reply
+		Article.find({}, (err, docs)=>{
+			if(err){
+				console.log(err);
+			}else{
+				res.json(docs);
+				res.render('index',{story: docs});
+			}
+		});
 	});
 
 };

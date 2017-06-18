@@ -1,2 +1,18 @@
-blah
+<section id="stories">
+    {{#each story}}
 
+        <div class="story" id={{_id}}>
+            <h2>{{{headline}}}</h2>
+            <p>Story Link: <a href={{link}}>{{{link}}}</a></p>
+
+            <div class="comments">
+                <p></p>
+            </div>
+
+        </div>
+
+    {{/each}}
+
+</section>
+
+<script src="assets/js/article.js"></script>
