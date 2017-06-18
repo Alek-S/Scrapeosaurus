@@ -4,7 +4,7 @@
 
 # Scrapeosaurus
 
-#### Try It Now: [Live Page Link](https://lbb-alek.herokuapp.com/)
+#### Try It Now: [Live Page Link](https://scrapeosaurus.herokuapp.com)
 
  When the button is clicked, the Y Combinator News HTML is fetched by the server. The server will then parse out the front page stories. If the story has no yet been added, then it's saved to a Mongo database.
 
