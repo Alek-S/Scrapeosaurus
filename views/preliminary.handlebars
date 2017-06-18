@@ -1,8 +1,8 @@
 <div id="about">
     <p>
-        When the above button is clicked, Y Combinator News HTML is fetched. The server will then parse the front page stories and adds them to a Mongo database, if the story is no yet been added.
+        When the button is clicked, the Y Combinator News HTML is fetched by the server. The server will then parse out the front page stories. If the story has no yet been added, then it's saved to a Mongo database.
     </p>
     <p>
-        Once scraped, the page redirects to the article section where all saved stories can be viewed. Likewise, comments can be added or removed. Comments are persisted in Mongo as a nested element. 
+        Once scraped, the page redirects to the article section where all saved stories can be viewed. Likewise, comments can be added or removed to individual stories. Comments are persisted in Mongo as a nested element in the same collection. 
     </p>
 </div>

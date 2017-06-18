@@ -30,6 +30,31 @@ p{
     margin-bottom: 10px;
 }
 
+
+.newComment{
+    margin-left: 0px;
+    margin-right: 25px;
+}
+.newComment input{
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    height: 25px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #fff;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.newComment button{
+    border: none;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    background: linear-gradient(to bottom, #ff981a 0%, #e07b00 100%);
+}
+
 #about{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -54,10 +79,10 @@ p{
     font-size: 1em;
     background: linear-gradient(to bottom, #ff981a 0%, #e07b00 100%);
 }
-#scrape:hover{
+#scrape:hover , .newComment button:hover{
     background: linear-gradient(to bottom, #ffa333 0%, #f58700 100%);
 }
-#scrape:active{
+#scrape:active, .newComment button:active{
     background: linear-gradient(to bottom, #c76d00 0%, #9e5700 100%);
 }
 
