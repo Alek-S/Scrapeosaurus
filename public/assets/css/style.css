@@ -16,6 +16,12 @@ header span{
     position: relative;
     top: -20px;
 }
+header a{
+    text-decoration: none;
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 1.4em;
+    color: #000;
+}
 button{
     outline:none;
 }
@@ -130,4 +136,11 @@ p{
 }
 .comment:hover{
     background: #e6f2ff;
+}
+#github{
+    float: right;
+    padding-top: 30px;
+    padding-right: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .4em;
 }
