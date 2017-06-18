@@ -19,6 +19,6 @@
 Morgan, Helmet
 
 ### Testing and Deployment
-Travis CI, Mocha, Supertest, Snyk, Gemnasium
+Travis CI, Mocha, Supertest, Snyk, Gemnasium, Heroku
 
 ![Test](./screenshots/test.png)
