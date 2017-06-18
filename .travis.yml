@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "8"
 install:
-  - npm install mocha 
+  - npm install -g mocha 
   - npm install supertest
   - npm install
 services:

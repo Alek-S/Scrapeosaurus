@@ -74,3 +74,10 @@ p{
     background: #fff;
     margin-bottom: 25px;
 }
+.comments p{
+    background: #e6e6e6;
+    margin-left: 30px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
