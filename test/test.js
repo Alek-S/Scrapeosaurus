@@ -1,9 +1,9 @@
 const request = require('supertest');
 const server = require('../server');
-
+const chalk = require('chalk');
 
 //===HTML Routes===
-describe('HTML Routes:', function () {
+describe( chalk.yellow('HTML Routes:'), function () {
 	afterEach(function () {
 		server.close();
 	});
@@ -14,12 +14,18 @@ describe('HTML Routes:', function () {
 			.expect(200, done);
 	});
 
+	it('responds to GET /article with 200', function(done) {
+		request(server)
+			.get('/article')
+			.expect(200, done);
+	});
+
 });
 
 
 
 //===API Routes===
-describe('API Routes:', function () {
+describe(chalk.yellow('API Routes:'), function () {
 	afterEach(function () {
 		server.close();
 	});
