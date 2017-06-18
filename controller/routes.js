@@ -135,4 +135,43 @@ module.exports = function(app) {
 		}
 	});
 
+	app.delete('/api/comment', (req,res)=>{
+		let storyId = req.body.id;
+		let position = req.body.position;
+		let commentPos = {};
+
+		position = 'comments.' + position;
+		commentPos[position] = '1';
+
+		if(!position || !storyId){
+			res.json({result: 'missing required body fields'});
+		}else{
+
+			//set the specific comment to delete to null in the comments array
+			Article.update(
+				{'_id': storyId},
+				{$unset: commentPos}, (err)=>{
+					if(err){
+						console.log(err);
+					}else{
+
+						//clear out null entries from comments
+						Article.update(
+							{'_id': storyId}, 
+							{$pull : {"comments" : null}}, (err)=>{
+								if(err){
+									console.log(err);
+								}else{
+									res.json({result: 'success'});
+								}
+							}
+						);
+
+					}
+				}
+			);
+
+		}
+	});
+
 };

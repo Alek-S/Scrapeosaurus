@@ -47,6 +47,10 @@ p{
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding-left: 15px;
+}
+.newComment input:hover, .newComment input:active{
+    border: 1px solid #ff981a;
 }
 .newComment button{
     border: none;
@@ -106,4 +110,24 @@ p{
     margin-right: 20px;
     padding: 10px;
     border-radius: 4px;
+}
+.delete{
+    position: relative;
+    background: linear-gradient(to bottom, #ff6666 0%, #b84747 100%);
+    border: none;
+    padding-top: 4px;
+    padding-right: 15px;
+    padding-left: 5px;
+    border-radius: 4px;
+    float: right;
+    top: -6px;
+}
+.delete:hover{
+    background: linear-gradient(to bottom, #ff9999 0%, #c26161 100%);
+}
+.delete:active{
+    background: linear-gradient(to bottom, #ff3d3d 0%, #a23f3f 100%);
+}
+.comment:hover{
+    background: #e6f2ff;
 }
