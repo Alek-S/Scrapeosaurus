@@ -94,9 +94,22 @@ module.exports = function(app) {
 				console.log(err);
 			}else{
 				res.json(docs);
-				res.render('index',{story: docs});
 			}
 		});
+	});
+
+
+	//get all comments as JSON
+	app.get('/api/comment', (req,res)=>{
+		Article.find({}).select({ _id: 1, comments: 1 }).exec(sendComments);
+		
+		function sendComments(err, docs){
+			if(err){
+				console.log(err);
+			}else{
+				res.json(docs);
+			}
+		}
 	});
 
 };

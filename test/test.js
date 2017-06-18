@@ -30,7 +30,7 @@ describe(chalk.yellow('API Routes:'), function () {
 		server.close();
 	});
 
-	it('responds to GET /api/scrape with 200, JSON success', function(done) {
+	it('responds to GET /api/scrape with 200, JSON {"result": "success"}', function(done) {
 		request(server)
 			.get('/api/scrape')
 			.expect('Content-Type', /json/)
@@ -42,6 +42,13 @@ describe(chalk.yellow('API Routes:'), function () {
 	it('responds to GET /api/article with 200, JSON', function(done) {
 		request(server)
 			.get('/api/article')
+			.expect('Content-Type', /json/)
+			.expect(200, done);
+	});
+	
+	it('responds to GET /api/comment with 200, JSON', function(done) {
+		request(server)
+			.get('/api/comment')
 			.expect('Content-Type', /json/)
 			.expect(200, done);
 	});
