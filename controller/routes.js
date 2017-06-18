@@ -112,4 +112,27 @@ module.exports = function(app) {
 		}
 	});
 
+	//post new comment to story
+	app.post('/api/comment', (req,res)=>{
+		let storyId = req.body.id;
+		let comment = req.body.comments;
+
+		if(!comment || !storyId){
+			res.json({result: 'missing required body fields'});
+		}else{
+
+			Article.update(
+				{'_id': storyId},
+				{ '$push':	{'comments': comment} }, (err)=>{
+					if(err){
+						console.log(err);
+					}else{
+						res.json({result: 'success'});
+					}
+				}
+			);
+
+		}
+	});
+
 };

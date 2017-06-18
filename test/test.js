@@ -52,5 +52,12 @@ describe(chalk.yellow('API Routes:'), function () {
 			.expect('Content-Type', /json/)
 			.expect(200, done);
 	});
+	
+	it('responds to POST /api/comment with 200, JSON', function(done) {
+		request(server)
+			.post('/api/comment')
+			.expect('Content-Type', /json/)
+			.expect(200, done);
+	});
 
 });
