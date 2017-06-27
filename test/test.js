@@ -62,7 +62,7 @@ describe(chalk.yellow('API Routes:'), function () {
 	
 	it('responds to DELETE /api/comment with 200, JSON', function(done) {
 		request(server)
-			.post('/api/comment')
+			.del('/api/comment')
 			.expect('Content-Type', /json/)
 			.expect(200, done);
 	});
